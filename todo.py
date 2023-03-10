@@ -1,6 +1,6 @@
 """The Todo route"""
 from fastapi import APIRouter, Path
-from model import Todo
+from model import Todo, TodoItem
 
 
 todo_router = APIRouter()
@@ -47,4 +47,24 @@ async def get_single_todo(todo_id: int = Path(..., title="The id of the todo to 
         if todo.id == todo_id:
             return {
                 "todo": todo
+            }
+
+
+@todo_router.put("/todo/{todo_id}")
+async def update_todo(todo_data: TodoItem, todo_id: int = Path(..., title="The ID of the todo to be updated")) -> dict:
+    """An API endpoint to update Todo entries
+
+    Args:
+        todo_data (int): The data to update the item
+        todo_id (int, optional): _description_. Defaults to Path(..., title="The ID of the todo to be updated").
+
+    Returns:
+        dict: A message to show success
+    """
+    for todo in todo_list:
+        if todo.id == todo_id:
+            todo.item = todo_data.item
+
+            return {
+                "Message": "Todo updated successfully"
             }
