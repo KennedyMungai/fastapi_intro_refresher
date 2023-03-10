@@ -37,3 +37,28 @@ class TodoItem(BaseModel):
                 "item": "Bailando"
             }
         }
+
+
+class TodoItems(BaseModel):
+    """Defined the TodoItems class
+
+    Args:
+        BaseModel (Class): The parent class for the TodoItems
+    """
+    todos: List[TodoItem]
+
+    class Config:
+        """The config class for the TodoItems class
+        """
+        schema_extra = {
+            "example": {
+                "todos": [
+                    {
+                        "item": "Example Schema 1"
+                    },
+                    {
+                        "item": "Example Schema 2"
+                    }
+                ]
+            }
+        }
