@@ -1,0 +1,4 @@
+__pycache__/
+.env
+requirements.txt
+fastapi_intro_another
