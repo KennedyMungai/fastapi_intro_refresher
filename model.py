@@ -13,9 +13,26 @@ class Todo(BaseModel):
 
     class Config:
         """Configuration for the Todo class"""
-        Schema_extra = {
+        schema_extra = {
             "Example": {
                 "id": 1,
                 "item": "Example Schema"
+            }
+        }
+
+
+class TodoItem(BaseModel):
+    """The template for the todo item
+
+    Args:
+        BaseModel (Class): The parent class of teh TodoItem
+    """
+    item: str
+
+    class Config:
+        """Config class for TodoItem"""
+        schema_extra = {
+            "example": {
+                "item": "Bailando"
             }
         }
