@@ -1,6 +1,6 @@
 """Created the model python script"""
-from pydantic import BaseModel
 from typing import List
+from pydantic import BaseModel
 
 
 class Todo(BaseModel):
