@@ -37,7 +37,8 @@ async def get_single_todo(todo_id: int = Path(..., title="The id of the todo to 
     """An endpoint for getting a single todo
 
     Args:
-        todo_id (int, optional): The id of the todo. Defaults to Path(..., title="The id of the todo to retrieve").
+        todo_id (int, optional): The id of the todo.
+                                Defaults to Path(..., title="The id of the todo to retrieve").
 
     Returns:
         dict: The return value
