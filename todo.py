@@ -73,9 +73,10 @@ async def update_todo(todo_data: TodoItem,
                 "Message": "Todo updated successfully"
             }
 
-    return {
-        "Message": "Todo with supplied Id doesn't exist"
-    }
+    raise HTTPException(
+        status_code=status.HTTP_404_NOT_FOUND,
+        detail="Todo with supplied ID doesn't exist"
+    )
 
 
 @todo_router.delete("/todo/{todo_id}")
