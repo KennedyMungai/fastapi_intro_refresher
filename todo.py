@@ -1,5 +1,5 @@
 """The Todo route"""
-from fastapi import APIRouter, Path
+from fastapi import APIRouter, Path, HTTPException
 from model import Todo, TodoItem, TodoItems
 
 
