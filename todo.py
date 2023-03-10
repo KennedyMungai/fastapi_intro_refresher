@@ -99,6 +99,7 @@ async def delete_single_todo(todo_id: int) -> dict:
                 "Message": "Todo deleted successfully"
             }
 
-    return {
-        "Message": "Todo deleted successfully"
-    }
+    raise HTTPException(
+        status_code=status.HTTP_404_NOT_FOUND,
+        detail="Todo with supplied ID doesn't exist"
+    )
