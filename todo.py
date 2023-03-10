@@ -68,3 +68,7 @@ async def update_todo(todo_data: TodoItem, todo_id: int = Path(..., title="The I
             return {
                 "Message": "Todo updated successfully"
             }
+
+    return {
+        "Message": "Todo with supplied Id doesn't exist"
+    }
