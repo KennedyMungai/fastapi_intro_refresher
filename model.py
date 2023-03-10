@@ -10,3 +10,12 @@ class Todo(BaseModel):
     """
     id: int
     item: str
+
+    class Config:
+        """Configuration for the Todo class"""
+        Schema_extra = {
+            "Example": {
+                "id": 1,
+                "item": "Example Schema"
+            }
+        }
