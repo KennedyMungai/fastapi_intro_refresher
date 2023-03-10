@@ -9,7 +9,7 @@ todo_list = []
 
 
 @todo_router.post("/todo")
-async def add_todo(todo: dict) -> dict:
+async def add_todo(todo: Todo) -> dict:
     """Dumb endpoint for adding todos
 
     Args:
