@@ -22,7 +22,7 @@ async def add_todo(todo: Todo) -> dict:
     return {"Message": "Todo added successfully"}
 
 
-@todo_router.get("/todo")
+@todo_router.get("/todo", response_model=TodoItems)
 async def retrieve_todos() -> dict:
     """A dummy endpoints for fetching todos
 
