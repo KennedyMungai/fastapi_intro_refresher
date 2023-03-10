@@ -51,7 +51,8 @@ async def get_single_todo(todo_id: int = Path(..., title="The id of the todo to 
 
 
 @todo_router.put("/todo/{todo_id}")
-async def update_todo(todo_data: TodoItem, todo_id: int = Path(..., title="The ID of the todo to be updated")) -> dict:
+async def update_todo(todo_data: TodoItem,
+                      todo_id: int = Path(..., title="The ID of the todo to be updated")) -> dict:
     """An API endpoint to update Todo entries
 
     Args:
@@ -85,7 +86,7 @@ async def delete_single_todo(todo_id: int) -> dict:
         dict: A message
     """
     for index in range(len(todo_list)):
-        todo == todo_list[index]
+        todo = todo_list[index]
         if todo.id == todo_id:
             todo_list.pop(index)
             todo_list.pop(index)
