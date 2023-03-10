@@ -1,5 +1,6 @@
 """The Todo route"""
 from fastapi import APIRouter
+from model import Todo
 
 
 todo_router = APIRouter()
