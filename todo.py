@@ -1,7 +1,7 @@
 """The Todo route"""
-from fastapi import APIRouter, Path, HTTPException
-from model import Todo, TodoItem, TodoItems
+from fastapi import APIRouter, HTTPException, Path, status
 
+from model import Todo, TodoItem, TodoItems
 
 todo_router = APIRouter()
 
@@ -48,6 +48,9 @@ async def get_single_todo(todo_id: int = Path(..., title="The id of the todo to 
             return {
                 "todo": todo
             }
+
+    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
+                        detail="Todo with supplied Id does not exist")
 
 
 @todo_router.put("/todo/{todo_id}")
